@@ -1,6 +1,13 @@
 <h2>Menu</h2>
-<ul>
-  {{#each}}
-  <li>{{title}}</li>
+<dl>
+  <!--FIXME: figure out how to to this with just each?-->
+  {{#each item in model}}
+  <dt>
+  {{item.title}} - {{item.price}} <button {{action 'add' item target='controllers.cart'}}></button>
+  </dt>
+  <dd>
+    {{item.description}}
+  </dd>
   {{/each}}
-</ul>
+</dl>
+

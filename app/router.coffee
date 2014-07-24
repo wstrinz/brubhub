@@ -4,7 +4,7 @@ Router = Ember.Router.extend
   location: BrubhubENV.locationType
 
 Router.map ->
-  @resource 'menu_items', ->
-    @route 'show', path: '/:menu_item_id'
+  @resource 'menu_items', -> @route 'show', path: '/:menu_item_id'
+  @route 'cart'
 
 `export default Router`
