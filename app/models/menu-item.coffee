@@ -4,6 +4,7 @@ MenuItem = DS.Model.extend
   title: DS.attr 'string'
   description: DS.attr 'string'
   price: DS.attr 'number'
+  cartItem: DS.belongsTo 'cart_item', { async: true }
 
 MenuItem.reopenClass
   FIXTURES: [

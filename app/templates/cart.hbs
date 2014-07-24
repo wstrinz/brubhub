@@ -1,0 +1,9 @@
+<h2>Your Cart</h2>
+<ul>
+{{#each item in model.cartItems}}
+<li>{{item.menuItem.title}} x{{item.quantity}}</li>
+{{/each}}
+</ul>
+Subtotal: {{model.subTotal}}
+
+<p>{{#link-to 'menu_items'}}Back to menu{{/link-to}}</p>

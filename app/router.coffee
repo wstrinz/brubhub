@@ -5,6 +5,6 @@ Router = Ember.Router.extend
 
 Router.map ->
   @resource 'menu_items', -> @route 'show', path: '/:menu_item_id'
-  @route 'cart'
+  @route 'cart', path: '/cart'
 
 `export default Router`

@@ -3,7 +3,7 @@
   <!--FIXME: figure out how to to this with just each?-->
   {{#each item in model}}
   <dt>
-  {{item.title}} - {{item.price}} <button {{action 'add' item target='controllers.cart'}}></button>
+  {{item.title}} - {{item.price}} <button {{action 'add' item target='controllers.cart'}}>Add to cart</button>
   </dt>
   <dd>
     {{item.description}}
@@ -11,3 +11,4 @@
   {{/each}}
 </dl>
 
+<p>{{#link-to 'cart'}}cart{{/link-to}}</p>
