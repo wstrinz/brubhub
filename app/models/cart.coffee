@@ -3,13 +3,11 @@
 Cart = DS.Model.extend
   cartItems: DS.hasMany 'cart_item', {async: true}
 
-  #FIXME: This menuItem.price dependancy not working
   subTotal: (->
     @get('cartItems').reduce (memo, item) ->
-      #console.log memo, item.get('quantity'), item.get('menuItem.price'), item.get('menuItem')
-      memo + item.get('quantity') * item.get('menuItem.price')
+      memo + item.get('quantity') * item.get('itemPrice')
     , 0
-    ).property 'cartItems.@each.menuItem.price', 'cartItems.@each.quantity'
+    ).property 'cartItems.@each.itemPrice', 'cartItems.@each.quantity'
 
 Cart.reopenClass
   FIXTURES: [
